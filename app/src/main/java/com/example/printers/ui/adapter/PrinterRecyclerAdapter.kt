@@ -35,15 +35,15 @@ class PrinterRecyclerAdapter(
 
         val printer = when {
             item.isMain -> {
-                holder.binding.tvPrinterName.setTextColor(ContextCompat.getColor(context,R.color.green))
+//                holder.binding.tvPrinterName.setTextColor(MainPrinter.color)
                 MainPrinter(PrinterModel(item.name, item.type, item.ip))
             }
             item.isError -> {
-                holder.binding.tvPrinterName.setTextColor(ContextCompat.getColor(context,R.color.red))
+//                holder.binding.tvPrinterName.setTextColor(ContextCompat.getColor(context,R.color.red))
                 ErrorPrinter(PrinterModel(item.name, item.type, item.ip))
             }
             item.isOffline -> {
-                holder.binding.tvPrinterName.setTextColor(ContextCompat.getColor(context,R.color.blue))
+//                holder.binding.tvPrinterName.setTextColor(ContextCompat.getColor(context,R.color.blue))
                 OfflinePrinter(PrinterModel(item.name, item.type, item.ip))
             }
             else -> null
@@ -52,6 +52,7 @@ class PrinterRecyclerAdapter(
         holder.itemView.setOnClickListener {
             printer?.makeToast(context, item.name, item.ip.toString())
         }
+        holder.binding.tvPrinterName.setTextColor(printer?.color?:R.color.black)
     }
 
     override fun getItemCount() = list.size
