@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Shipping2">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_payment_methods"
+        android:layout_width="131dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shipping_companies"
+        android:layout_width="143dp"
+        android:layout_height="197dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_payment_methods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rv_payment_methods"
+        app:layout_constraintTop_toTopOf="@+id/rv_payment_methods" />
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="119dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/rv_shipping_companies"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rv_shipping_companies"
+        app:layout_constraintTop_toBottomOf="@+id/rv_shipping_companies" />
+
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="116dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/et_price"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/et_price"
+        app:layout_constraintTop_toBottomOf="@+id/et_price" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_discount"
+        android:layout_width="114dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_weight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/et_weight"
+        app:layout_constraintTop_toBottomOf="@+id/et_weight" />
+
+    <Button
+        android:id="@+id/bt_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
