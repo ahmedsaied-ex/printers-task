@@ -4,7 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import com.example.printers.R
 
-class OfflinePrinter(override val model: PrinterModel) : BasePrinter {
+class OfflinePrinter(override val model: PrinterModel) : BasePrinter , Toastable , Colorable {
     override fun makeToast(
         context: Context,
         name: String,

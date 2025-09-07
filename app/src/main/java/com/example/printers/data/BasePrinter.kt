@@ -5,8 +5,8 @@ import android.widget.Toast
 
 interface BasePrinter {
     val model: PrinterModel
-    abstract fun makeToast(context: Context , name: String, ip: String)
 
-    abstract val color : Int
+
+
 
 }

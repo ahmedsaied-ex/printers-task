@@ -5,7 +5,7 @@ import android.widget.Toast
 import com.example.printers.R
 class MainPrinter(
      override val model: PrinterModel
-) : BasePrinter{
+) : BasePrinter , Toastable , Colorable{
 
      override fun makeToast(
           context: Context,
