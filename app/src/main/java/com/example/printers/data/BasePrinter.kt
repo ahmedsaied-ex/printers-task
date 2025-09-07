@@ -5,8 +5,4 @@ import android.widget.Toast
 
 interface BasePrinter {
     val model: PrinterModel
-
-
-
-
 }

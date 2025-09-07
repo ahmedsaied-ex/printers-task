@@ -4,8 +4,7 @@ data class PrinterModel(
     val name: String,
     val type: String,
     val ip: Int,
-    )
-/*
+)/*
 * override fun onBindViewHolder(holder: PrinterCardHolder, position: Int) {
     val item = list[position]
     val context = holder.itemView.context
