@@ -2,14 +2,13 @@ package com.example.printers.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.printers.R
-import com.example.printers.data.DataModel
-import com.example.printers.data.ErrorPrinter
-import com.example.printers.data.MainPrinter
-import com.example.printers.data.OfflinePrinter
-import com.example.printers.data.PrinterModel
+import com.example.printers.data.printers.DataModel
+import com.example.printers.data.printers.ErrorPrinter
+import com.example.printers.data.printers.MainPrinter
+import com.example.printers.data.printers.OfflinePrinter
+import com.example.printers.data.printers.PrinterModel
 import com.example.printers.databinding.PrinterCardBinding
 import com.example.printers.ui.holders.PrinterCardHolder
 
