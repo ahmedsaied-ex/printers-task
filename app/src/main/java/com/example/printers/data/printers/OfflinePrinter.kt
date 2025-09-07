@@ -1,4 +1,4 @@
-package com.example.printers.data
+package com.example.printers.data.printers
 
 import android.content.Context
 import android.widget.Toast

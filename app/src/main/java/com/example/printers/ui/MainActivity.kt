@@ -1,18 +1,10 @@
 package com.example.printers.ui
 
 import android.os.Bundle
-import android.util.Printer
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.printers.data.BasePrinter
-import com.example.printers.data.DataManager
-import com.example.printers.data.DataModel
-import com.example.printers.data.ErrorPrinter
-import com.example.printers.data.MainPrinter
-import com.example.printers.data.OfflinePrinter
-import com.example.printers.data.PrinterModel
+import com.example.printers.data.printers.DataManager
 import com.example.printers.databinding.ActivityMainBinding
 import com.example.printers.ui.adapter.PrinterRecyclerAdapter
 

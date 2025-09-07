@@ -1,4 +1,4 @@
-package com.example.printers.data
+package com.example.printers.data.printers
 
 class DataManager {
     val printers = listOf(
