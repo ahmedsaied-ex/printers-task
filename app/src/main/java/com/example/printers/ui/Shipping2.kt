@@ -3,12 +3,13 @@ package com.example.printers.ui
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.printers.databinding.ActivityShippingBinding
+import com.example.printers.databinding.ActivityShipping2Binding
+
 
 class Shipping2 : AppCompatActivity() {
 
 
-    lateinit var binding: ActivityShippingBinding
+    lateinit var binding: ActivityShipping2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,7 +18,7 @@ class Shipping2 : AppCompatActivity() {
     }
 
     private fun initView() {
-        binding = ActivityShippingBinding.inflate(layoutInflater)
+        binding = ActivityShipping2Binding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 }
