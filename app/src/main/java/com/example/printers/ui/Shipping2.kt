@@ -15,6 +15,11 @@ class Shipping2 : AppCompatActivity() {
         enableEdgeToEdge()
         initView()
 
+
+
+
+
+
     }
 
     private fun initView() {
