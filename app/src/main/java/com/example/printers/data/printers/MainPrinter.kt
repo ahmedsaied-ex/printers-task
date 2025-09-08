@@ -3,6 +3,7 @@ package com.example.printers.data.printers
 import android.content.Context
 import android.widget.Toast
 import com.example.printers.R
+import com.example.printers.data.printers.Toastable
 
 class MainPrinter(
     override val model: PrinterModel
