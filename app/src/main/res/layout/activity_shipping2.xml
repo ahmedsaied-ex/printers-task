@@ -33,7 +33,7 @@
         android:layout_height="87dp"
         android:layout_marginTop="56dp"
         android:hint="weight (KG)"
-        app:errorEnabled="true"
+        app:helperTextTextColor="@color/my_helper_color"
         app:layout_constraintEnd_toEndOf="@+id/et_price"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/et_price"
@@ -52,14 +52,16 @@
         android:layout_width="147dp"
         android:layout_height="83dp"
         android:hint="price ($)"
-        app:errorEnabled="true"
+        app:endIconMode="none"
+        app:helperTextTextColor="@color/my_helper_color"
         app:layout_constraintStart_toStartOf="@+id/rv_shipping_companies"
         app:layout_constraintTop_toTopOf="@+id/rv_discount">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

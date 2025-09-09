@@ -2,6 +2,7 @@ package com.example.printers.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,13 @@ import com.example.printers.data.shipping.discounts.DiscountsMethods
 import com.example.printers.data.shipping.payment.PaymentMethods
 import com.example.printers.data.shipping.companies.ShippingCompanies
 import com.example.printers.data.shipping.companies.Shorouk
+import com.example.printers.data.shipping.conditions.CreditAndAramax
+import com.example.printers.data.shipping.conditions.CreditAndOubour
+import com.example.printers.data.shipping.conditions.CreditAndWeight
+import com.example.printers.data.shipping.conditions.IConditions
+import com.example.printers.data.shipping.conditions.OrderData
+import com.example.printers.data.shipping.conditions.PayPalAndShorouk
+import com.example.printers.data.shipping.conditions.WeightMoreThan250
 import com.example.printers.data.shipping.discounts.TenPercent
 import com.example.printers.data.shipping.discounts.ThirtyPercent
 import com.example.printers.data.shipping.discounts.TwentyPercent
@@ -34,6 +42,14 @@ class ShippingActivity : AppCompatActivity() {
     lateinit var paymentAdapter: RadioButtonRecyclerViewAdapter
     lateinit var discountsAdapter: RadioButtonRecyclerViewAdapter
     lateinit var message: String
+
+    private val conditions = listOf<IConditions>(
+        CreditAndAramax(),
+        CreditAndOubour(),
+        CreditAndWeight(),
+        WeightMoreThan250(),
+        PayPalAndShorouk()
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,62 +77,51 @@ class ShippingActivity : AppCompatActivity() {
 
     private fun callBacks() {
         binding.btCalculate.setOnClickListener {
-            Log.d("Condition TAG", "callBacks: ${discountsAdapter.getSelectedItem()}")
-            Log.d("Condition TAG", "callBacks: ${paymentAdapter.getSelectedItem()}")
-            Log.d("Condition TAG", "callBacks: ${shippingAdapter.getSelectedItem()}")
-            if (binding.etWeight.editText?.text?.toString()?.trim().isNullOrBlank()) {
-                binding.etWeight.error = "Please enter weight"
-            } else if (binding.etPrice.editText?.text?.toString()?.trim().isNullOrBlank()) {
-                binding.etPrice.error = "Please enter price"
-
+            binding.etWeight.clearFocus()
+            binding.etPrice.clearFocus()
+            binding.etWeight.helperText = null
+            binding.etPrice.helperText = null
+            if (binding.etWeight.value().isBlank()) {
+                binding.etWeight.helperText = "Please enter weight"
+            } else if (binding.etPrice.value().isBlank()) {
+                binding.etPrice.helperText = "Please enter price"
             } else {
-                if (shippingAdapter.getSelectedItem() == ShippingCompanies.ARAMAX.shippingName &&
-                    paymentAdapter.getSelectedItem() == PaymentMethods.CREDIT_CARD.paymentName &&
-                    discountsAdapter.getSelectedItem() != null) {
-                    message = "cant add discounts"
-                }
-                else if (paymentAdapter.getSelectedItem() == PaymentMethods.CREDIT_CARD.paymentName &&
-                    shippingAdapter.getSelectedItem() == ShippingCompanies.OUBOUR.shippingName &&
-                    discountsAdapter.getSelectedItem() != "${DiscountsMethods.TEN.percent}%") {
-                    message = "cant add discounts more than 10 % "
+                val orderData = OrderData(
+                    shippingCompany = shippingAdapter.getSelectedItem() ?: "",
+                    paymentMethod = paymentAdapter.getSelectedItem() ?: "",
+                    discount = discountsAdapter.getSelectedItem(),
+                    weight = binding.etWeight.editText?.text.toString().toDouble(),
+                    price = binding.etPrice.editText?.text.toString().toDouble()
+                )
 
-                }
-                else if (
-                    binding.etWeight.editText?.text.toString().toDouble() >= 100 &&
-                    paymentAdapter.getSelectedItem() == PaymentMethods.CREDIT_CARD.paymentName &&
-                    shippingAdapter.getSelectedItem() == ShippingCompanies.OUBOUR.shippingName) {
-                    message = "sorry but you cant use OUBOUR with weight more than 100"
-
-                }
-                else if (
-                    binding.etWeight.editText?.text.toString().toDouble() > 250 &&
-                    paymentAdapter.getSelectedItem() == PaymentMethods.CREDIT_CARD.paymentName &&
-                    discountsAdapter.getSelectedItem() != "${DiscountsMethods.TEN.percent}%"
-                ) {
-                    message =
-                        "Sorry but the weight is more than 250 and you cant use credit card and the discount is not <= 10 %"
-                }
-                else {
-
-                    message =
-                        "Company name  : ${shippingAdapter.getSelectedItem()}\n" +
-                                "price before discount : ${binding.etPrice.editText?.text}\n" +
-                                "price after discount : ${
-                                    TenPercent(DiscountsMethods.TEN.percent.toString()).pay(
-                                        binding.etPrice.editText?.text.toString().toDouble(),
-                                        discountsAdapter.getSelectedItem()?.toInt()
-                                    )
-                                }\n"
-                }
-
-                AlertDialog.Builder(this)
-                    .setTitle("Alert Title")
-                    .setMessage(message)
-                    .setPositiveButton("OK", null)
-                    .show()
+                message = check(orderData)
+                AlertDialog.Builder(this).setTitle("Alert Title").setMessage(message)
+                    .setPositiveButton("OK", null).show()
             }
 
         }
+    }
+
+    private fun check(orderData: OrderData): String {
+        // Check each condition in order
+
+        for (condition in conditions) {
+            Log.d("TAG Shipping activity", "check: ${condition.isValid(orderData)}")
+            if (condition.isValid(orderData)) {
+                return condition.getMessages()   // If the result contains an error message (not a calculation), return it
+            }
+        }
+
+        // If no condition returned an error, calculate the final result
+        return "shipping company ${orderData.shippingCompany}\n" + "price before discount : ${orderData.price}\n" + "price after discount : ${
+            TenPercent(
+                ""
+            ).pay(orderData.price, orderData.discount?.toInt())
+        } "
+    }
+
+    fun com.google.android.material.textfield.TextInputLayout.value(): String {
+        return this.editText?.text.toString().trim()
     }
 
     private fun initRecyclerViews() {
