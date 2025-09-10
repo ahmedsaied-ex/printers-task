@@ -21,7 +21,6 @@ class ViewPagerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
     val view = FragmentViewPagerBinding.inflate(inflater, container, false)
-
         val fragmentList =listOf< Fragment>(
             FragmentOne(),
             FragmentTwo(),
