@@ -1,8 +1,7 @@
-package com.example.printers.ui
+package com.example.printers.ui.activities
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.printers.data.shipping.companies.Aramax
 import com.example.printers.data.shipping.companies.Obour
 import com.example.printers.data.shipping.discounts.DiscountsMethods
-import com.example.printers.data.shipping.payment.PaymentMethods
 import com.example.printers.data.shipping.companies.ShippingCompanies
 import com.example.printers.data.shipping.companies.Shorouk
 import com.example.printers.data.shipping.conditions.CreditAndAramax
@@ -28,6 +26,7 @@ import com.example.printers.data.shipping.payment.Credit
 import com.example.printers.data.shipping.payment.PayPal
 import com.example.printers.databinding.ActivityShipping2Binding
 import com.example.printers.ui.adapter.RadioButtonRecyclerViewAdapter
+import com.google.android.material.textfield.TextInputLayout
 
 
 class ShippingActivity : AppCompatActivity() {
@@ -120,7 +119,7 @@ class ShippingActivity : AppCompatActivity() {
         } "
     }
 
-    fun com.google.android.material.textfield.TextInputLayout.value(): String {
+    fun TextInputLayout.value(): String {
         return this.editText?.text.toString().trim()
     }
 

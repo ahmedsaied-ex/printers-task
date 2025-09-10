@@ -5,4 +5,13 @@
     <color name="green">#40FF49</color>
     <color name="blue">#0B47F8</color>
     <color name="red">#F80B0B</color>
+    <color name="primary_green">#4CAF50</color>
+    <color name="primary_green_light">#90cbb5</color>
+    <color name="background_light">#f7f7f7</color>
+    <color name="card_background">#5cbf91</color>
+    <color name="button_secondary">#FAF7F7</color>
+    <color name="indicator_active">#4CAF50</color>
+    <color name="indicator_inactive">#E0E0E0</color>
+    <color name="main_back_ground_Color">#063233</color>
+    <color name="text_color">#415F62</color>
 </resources>

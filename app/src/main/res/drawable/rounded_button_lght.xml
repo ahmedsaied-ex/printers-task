@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- background color -->
+    <solid android:color="@color/button_secondary" />
+
+    <!-- corner radius -->
+    <corners android:radius="7dp" />
+
+    <!-- optional stroke (border) -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/button_secondary" />
+</shape>

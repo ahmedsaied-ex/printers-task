@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/main_back_ground_Color"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.FragmentFour">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <ImageView
+        android:id="@+id/iv_cloud"
+        android:layout_width="379dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="170dp"
+        android:src="@drawable/trans_cloud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd_amjad"
+        android:layout_width="360dp"
+        android:layout_height="130dp"
+        android:backgroundTint="@color/card_background"
+        android:paddingHorizontal="50dp"
+        android:layout_marginHorizontal="55dp"
+
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_cloud" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/alexandria_semibold"
+                android:textColor="@color/main_back_ground_Color"
+                android:textSize="20dp"
+                android:text="أنا أمجاد"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="176dp"
+                android:layout_height="65dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/main_back_ground_Color"
+                android:fontFamily="@font/alexandria_semibold"
+                android:text="مسنشارة آلية مدعومة بالذكاء الاصطناعي مهمتا الأولى تحسين تجربه الموظف"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="153dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="15dp"
+        android:elevation="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/amjad"
+        app:layout_constraintBottom_toBottomOf="@+id/cd_amjad"
+        app:layout_constraintStart_toStartOf="@+id/cd_amjad" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button_green"
+        android:text="التالي"
+        android:textColor="@color/main_back_ground_Color"
+        android:fontFamily="@font/alexandria_semibold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button_lght"
+        android:text="تخطي"
+        android:fontFamily="@font/alexandria_semibold"
+        android:textColor="@color/main_back_ground_Color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

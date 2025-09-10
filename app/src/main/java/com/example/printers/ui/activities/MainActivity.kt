@@ -1,4 +1,4 @@
-package com.example.printers.ui
+package com.example.printers.ui.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
