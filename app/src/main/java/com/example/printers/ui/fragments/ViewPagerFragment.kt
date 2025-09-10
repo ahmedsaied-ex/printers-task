@@ -34,7 +34,6 @@ class ViewPagerFragment : Fragment() {
         )
         view.vpOnBoarding.adapter=adapter
 
-
         return view.root
     }
 
