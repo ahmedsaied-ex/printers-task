@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AmjadSubText" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_semibold</item>
+
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/main_back_ground_Color</item>
+    </style>
+
+    <style name="SubText" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    <style name="HeadText" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/main_back_ground_Color</item>
+    </style>
+
+</resources>

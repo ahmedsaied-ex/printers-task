@@ -11,7 +11,7 @@
     <color name="card_background">#5cbf91</color>
     <color name="button_secondary">#FAF7F7</color>
     <color name="indicator_active">#4CAF50</color>
-    <color name="indicator_inactive">#E0E0E0</color>
+    <color name="indicator_inactive">#80B4B4B4</color>
     <color name="main_back_ground_Color">#063233</color>
     <color name="text_color">#415F62</color>
 </resources>
