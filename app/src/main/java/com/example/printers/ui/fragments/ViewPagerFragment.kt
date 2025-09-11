@@ -36,6 +36,4 @@ class ViewPagerFragment : Fragment() {
 
         return view.root
     }
-
-
 }
