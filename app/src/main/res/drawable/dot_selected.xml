@@ -2,11 +2,12 @@
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="ring"
-            android:innerRadius="8dp"
-            android:thickness="2dp"
+            android:innerRadius="5dp"
+            android:thickness="3dp"
             android:useLevel="false"
             >
             <solid android:color="@color/indicator_active"/>
+
         </shape>
 
     </item>
@@ -14,7 +15,7 @@
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="ring"
             android:innerRadius="0dp"
-            android:thickness="4dp"
+            android:thickness="3dp"
             android:useLevel="false"
             >
             <solid android:color="@color/indicator_active"/>

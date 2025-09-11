@@ -33,6 +33,9 @@ class ViewPagerFragment : Fragment() {
             list = fragmentList
         )
         view.vpOnBoarding.adapter=adapter
+        TabLayoutMediator(view.tabLayout, view.vpOnBoarding) { tap, index ->
+
+        }.attach()
 
         return view.root
     }
