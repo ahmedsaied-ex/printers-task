@@ -116,7 +116,6 @@ class GuideActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
-
     private fun setupIndicators(count: Int) {
         indicators = arrayOfNulls(count)
 
