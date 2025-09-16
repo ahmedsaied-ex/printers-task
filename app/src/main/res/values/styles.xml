@@ -19,5 +19,20 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/main_back_ground_Color</item>
     </style>
+    <style name="Regular" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/main_back_ground_Color</item>
+    </style>
+    <style name="semiBold" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/main_back_ground_Color</item>
+    </style>
+    <style name="medium" parent="@style/TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/alexandria_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#287676</item>
+    </style>
 
 </resources>

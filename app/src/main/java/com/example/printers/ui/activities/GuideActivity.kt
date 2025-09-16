@@ -1,19 +1,23 @@
 package com.example.printers.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowInsets
+import android.view.animation.AnimationUtils
 
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.printers.R
+import com.example.printers.data.MyConstants
 import com.example.printers.databinding.ActivityGuideBinding
 import com.example.printers.ui.adapter.ViewPagerAdapter
 
@@ -22,6 +26,8 @@ class GuideActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGuideBinding
     private lateinit var indicators: Array<ImageView?>
     private lateinit var adapter: ViewPagerAdapter
+    private lateinit var splashOnResume: View
+    private lateinit var splashOnStop: View
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,17 +35,74 @@ class GuideActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
 
-        initViews()
 
+
+        initViews()
+//        initSplashOnResume()
         initAdapter()
 
-        initIndicator()
+
 
         callBacks()
+        initIndicator()
+
 
 
     }
+/*
 
+    private fun initSplashOnResume() {
+//        splashOnResume = LayoutInflater.from(this).inflate(R.layout.layout_splash_on_resume, null)
+//        addContentView(splashOnResume, ViewGroup.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.MATCH_PARENT
+//        ))
+//        splashOnResume.visibility=View.GONE
+//
+//        splashOnStop = LayoutInflater.from(this).inflate(R.layout.layout_splash_on_stop, null)
+//        addContentView(splashOnStop, ViewGroup.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.MATCH_PARENT
+//        ))
+//        splashOnStop.visibility=View.GONE
+//
+//
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("GuideActivity_LOG", "onResume")
+//    }
+//    override fun onRestart() {
+//        super.onRestart()
+//        Log.d("GuideActivity_LOG", "onRestart")
+//        splashOnStop.visibility=View.GONE
+//
+//        splashOnResume.visibility=View.VISIBLE
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            splashOnResume.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+//            splashOnResume.visibility=View.GONE
+//        }, 2300)
+//
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        splashOnStop.visibility=View.VISIBLE
+//        Log.d("GuideActivity_LOG", "onPause")
+//
+//    }
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("GuideActivity_LOG", "onStop")
+//
+//    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("GuideActivity_LOG", "onStart")
+//    }
+*/
     private fun callBacks() {
 
         binding.vpOnBoarding.registerOnPageChangeCallback(object :
@@ -47,7 +110,6 @@ class GuideActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
-
                 when (position) {
                     0 -> {
                         binding.btNext.visibility = View.VISIBLE
@@ -59,7 +121,6 @@ class GuideActivity : AppCompatActivity() {
                             )
                         )
                     }
-
                     adapter.itemCount - 1 -> {
                         binding.btNext.visibility = View.GONE
                         binding.btSkip.visibility = View.GONE
@@ -70,7 +131,6 @@ class GuideActivity : AppCompatActivity() {
                             )
                         )
                     }
-
                     else -> {
                         binding.btNext.visibility = View.VISIBLE
                         binding.btSkip.visibility = View.VISIBLE
@@ -95,8 +155,11 @@ class GuideActivity : AppCompatActivity() {
         binding.btSkip.setOnClickListener {
             binding.vpOnBoarding.currentItem = adapter.list.size - 1
         }
+        binding.btLogin.setOnClickListener {
+            savePrefrances()
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
-
     private fun initIndicator() {
         setupIndicators(adapter.list.size)
         setCurrentIndicator(0)
@@ -106,12 +169,33 @@ class GuideActivity : AppCompatActivity() {
         adapter = ViewPagerAdapter(
             fragmentManager = supportFragmentManager, lifecycle = lifecycle,
         )
-
         binding.vpOnBoarding.adapter = adapter
         binding.vpOnBoarding.layoutDirection = View.LAYOUT_DIRECTION_RTL
     }
 
+
+    private fun savePrefrances(){
+        val pref= getSharedPreferences(MyConstants.PREFERENCES_NAME, MODE_PRIVATE)
+        val editor=pref.edit()
+        editor.putBoolean(MyConstants.IS_FIRST_TIME_LAUNCH,false)
+        editor.commit()
+        Log.d("GuideActivity_LOG", "savePrefrances")
+    }
+
+    private fun isFirstTime(): Boolean {
+        val pref= getSharedPreferences(MyConstants.PREFERENCES_NAME, MODE_PRIVATE)
+        val isFirstTime=pref.getBoolean(MyConstants.IS_FIRST_TIME_LAUNCH,true)
+        Log.d("GuideActivity_LOG", "isFirstTime: $isFirstTime")
+        return isFirstTime
+    }
+
     private fun initViews() {
+        if(!isFirstTime()){
+
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+        savePrefrances()
         binding = ActivityGuideBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

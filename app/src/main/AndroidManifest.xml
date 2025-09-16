@@ -12,7 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Printers">
         <activity
-            android:name=".ui.activities.GuideActivity"
+            android:name=".ui.activities.RegesterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Printers" />
+        <activity
+            android:name=".ui.activities.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.NewTask"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +34,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.activities.GuideActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.ShippingActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
     </application>
 
 </manifest>

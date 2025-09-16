@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.RegesterActivity">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textAppearance="@style/Regular"
+        android:textSize="16sp"
+        android:textColor="#1C1E44"
+        android:text="إنشاء حساب جديد"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:baselineAligned="true"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCodePicker"
+            android:layout_width="109dp"
+            android:layout_height="59dp"
+            android:background="#D8E7DA"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+
+            android:padding="0dp"
+            android:transitionName="false"
+            app:ccp_areaCodeDetectedCountry="false"
+            app:ccp_autoFormatNumber="false"
+            app:ccp_contentColor="#6B6D85"
+            app:ccp_defaultLanguage="ARABIC"
+            app:ccp_defaultNameCode="sa"
+            app:ccp_showArrow="false"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false"
+            app:ccp_textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/background_light"
+            android:cursorVisible="true"
+
+            android:ems="10"
+            android:inputType="phone"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="20dp"
+            android:text="05"
+            android:textAppearance="@style/Regular"
+            android:textColor="@color/main_back_ground_Color"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="51dp"
+        app:hintTextColor="#6B6D85"
+        android:layout_marginEnd="16dp"
+        android:background="@color/background_light"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/Regular"
+        app:boxBackgroundColor="#F4F4F6"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="#F4F4F6"
+        app:cursorColor="@color/main_back_ground_Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:hint="الاسم بالكامل"
+            android:inputType="text"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/Regular"
+            android:textColor="#6B6D85"
+            android:textColorHint="#6B6D85"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_mail1"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/background_light"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/Regular"
+        app:boxBackgroundColor="#F4F4F6"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="#F4F4F6"
+        app:cursorColor="@color/main_back_ground_Color"
+        app:hintTextColor="#6B6D85"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:hint="البريد الالكتروني"
+            android:inputType="text"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/Regular"
+            android:textColor="#6B6D85"
+            android:textColorHint="#6B6D85"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
