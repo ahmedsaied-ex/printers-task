@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_amjad"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.printers.ui.fragments.main.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_notification"
+            app:destination="@id/notification" />
+    </fragment>
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.printers.Notification"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notification_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offersFragment2"
+        android:name="com.example.printers.OffersFragment"
+        android:label="fragment_offers"
+        tools:layout="@layout/fragment_offers" />
+    <fragment
+        android:id="@+id/vendorsFragment2"
+        android:name="com.example.printers.VendorsFragment"
+        android:label="fragment_vendors2"
+        tools:layout="@layout/fragment_vendors2" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.printers.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/consultantFragment"
+        android:name="com.example.printers.ConsultantFragment"
+        android:label="fragment_consultant"
+        tools:layout="@layout/fragment_consultant" />
+</navigation>

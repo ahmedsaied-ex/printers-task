@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Circular image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_amjad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageStyle"
+            app:srcCompat="@drawable/amjad" />
+
+        <!-- Inner shadow overlay -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/inner_shadow" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_message_content"
+        android:layout_width="262dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="12dp"
+        android:text="انتهى صلاحية عرض قمت بتفعيله للاستفادة به ولم يتم تطبيقه"
+        android:textAppearance="@style/semiBold"
+        android:textColor="@color/yankee_blue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Regular11"
+        android:textColor="#6B6D85"
+        android:layout_marginTop="6dp"
+        android:text="(اليوم) 13 إبريل 2024 - 2:14 م"
+        app:layout_constraintEnd_toEndOf="@+id/tv_message_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@android:color/transparent" />
+
+    <!-- Inner shadow simulation -->
+    <gradient
+        android:type="radial"
+        android:gradientRadius="90%"
+        android:startColor="#CC000000"
+        android:endColor="@android:color/transparent"
+        android:centerColor="#33000000"
+        android:centerX="50%"
+        android:centerY="50%"
+        />
+</shape>

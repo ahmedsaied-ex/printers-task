@@ -4,6 +4,7 @@
     android:thickness="3dp"
     android:useLevel="false"
     >
+    <size android:height="15dp" android:width="15dp"/>
     <solid android:color="@color/indicator_inactive"/>
 
 </shape>

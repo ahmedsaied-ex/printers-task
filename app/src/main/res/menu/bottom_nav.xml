@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:icon="@drawable/ic_home_outline"
+        android:id="@+id/homeFragment"
+        android:title="Home" />
+    <item android:icon="@drawable/ic_offers_outline"
+        android:title="Offers"
+        android:id="@+id/offersFragment"
+        />
+    <item android:icon="@drawable/ic_vendors_outline"
+        android:id="@+id/vendorsFragment"
+        android:title="Vendors" />
+    <item android:icon="@drawable/ic_news_outline"
+        android:title="News"
+        android:id="@+id/newsAndSurveys"
+        />
+    <item android:icon="@drawable/ic_my_consultant_outline"
+        android:title="Consultant"
+        android:id="@+id/myConsultant"
+        />
+</menu>

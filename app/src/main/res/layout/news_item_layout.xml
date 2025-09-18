@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:paddingRight="16dp"
+    android:layout_height="200dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/white"
+        android:id="@+id/news_card"
+        android:layoutDirection="ltr"
+        android:layout_width="280dp"
+        android:layout_height="192dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_news"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_height="140dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/offer_image" />
+
+            <TextView
+                android:id="@+id/tv_news_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/yankee_blue"
+                android:textAppearance="@style/medium"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="20dp"
+                android:text=" كيف استفيد من برنامج أمجاد..."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_news" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="16dp"
+                android:layout_height="10dp"
+
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_news_text"
+                app:layout_constraintEnd_toStartOf="@+id/tv_news_text"
+                app:layout_constraintTop_toTopOf="@+id/tv_news_text"
+                app:srcCompat="@drawable/ic_views" />
+
+            <TextView
+                android:id="@+id/tv_news_number"
+                android:textColor="#6B6D85"
+                android:textSize="14sp"
+                android:textAppearance="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="198"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                app:layout_constraintEnd_toStartOf="@+id/imageView14"
+                app:layout_constraintTop_toTopOf="@+id/imageView14" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

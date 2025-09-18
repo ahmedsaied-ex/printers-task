@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:background="@color/app_bar_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- image card -->
+                <androidx.cardview.widget.CardView
+                    android:backgroundTint="@color/app_bar_color"
+                    android:id="@+id/cv_image_view"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="22dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/amjad" />
+                </androidx.cardview.widget.CardView>
+                <!--notification card-->
+                <androidx.cardview.widget.CardView
+
+                    android:backgroundTint="@color/app_bar_color"
+                    android:id="@+id/cv_notification_card"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:cardCornerRadius="22dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_image_view"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_image_view">
+                    <!--notification bill-->
+                    <ImageView
+
+                        android:id="@+id/iv_notification_bill"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notofication"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+
+                </androidx.cardview.widget.CardView>
+                <!--notification dot-->
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/notification_dot"
+                    android:elevation="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_notification_card"
+                    app:layout_constraintTop_toTopOf="@+id/cv_notification_card" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="أهلاً, معاذ"
+                    android:textAppearance="@style/medium"
+                    android:textColor="@color/yankee_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/cv_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--date text -->
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="11dp"
+                    android:text="اليوم الأحد، 27/11/2024"
+                    android:textAppearance="@style/Regular11"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+                <!--hand image-->
+                <ImageView
+                    android:id="@+id/iv_hand"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="6dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_user_name"
+                    app:srcCompat="@mipmap/hand" />
+                <!--cash name-->
+                <TextView
+                    android:id="@+id/tv_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="رصيد نقاطك"
+                    android:textAppearance="@style/Regular11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--cash count-->
+                <TextView
+                    android:id="@+id/tv_cash_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="10,000"
+                    android:textAppearance="@style/semiBold"
+                    android:textColor="@color/yankee_blue"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_cash"
+
+                    app:layout_constraintStart_toStartOf="@+id/tv_cash"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cash" />
+                <!--cash icon-->
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_cash"
+                    app:layout_constraintTop_toTopOf="@+id/tv_cash"
+                    app:srcCompat="@drawable/ic_coins" />
+                <!--logout icon-->
+                <ImageView
+                    android:id="@+id/bt_logOut"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_cash"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logout" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            Banner Recycler View-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layoutDirection="rtl"
+                android:background="@color/white"
+                android:id="@+id/rv_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/white"
+                android:paddingTop="0dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_banner">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="76dp"
+                        android:layout_height="84dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/not_allowed_phone_illu"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="209dp"
+                        android:layout_height="63dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="غير مسموح بتسجيل الحضور عبر هذا الجوال لأنه لم يتم تسجيله بعد لدى إدارة الموارد البشرية"
+                        android:textAppearance="@style/medium"
+                        android:textColor="#3E4060"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="ارسال طلب لتسجيل هذا الجوال"
+                        android:textAppearance="@style/semiBold"
+                        android:textColor="#A70751"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView3" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                        app:layout_constraintEnd_toStartOf="@+id/textView15"
+                        app:layout_constraintTop_toTopOf="@+id/textView15" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/white"
+                android:elevation="0dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:strokeColor="#E8E9EC">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="384dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vp_hr_request"
+                        android:layout_width="match_parent"
+                        android:layout_height="94dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tl_hr_view_pager"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vp_hr_request"
+                        app:tabIconTint="@null"
+                        app:tabIndicator="@null"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabMaxWidth="12dp"
+                        app:tabMinWidth="15dp"
+                        app:tabRippleColor="@android:color/transparent">
+
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+<!--amjad colo-->
+            <androidx.cardview.widget.CardView
+                android:backgroundTint="#5cbf91"
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="139dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:elevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="55dp"
+                        android:layout_height="174dp"
+                        android:background="@drawable/back_amjad"
+                        android:clipToOutline="true"
+                        android:rotation="-30"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="-8dp" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="55dp"
+                        android:layout_height="174dp"
+                        android:layout_marginStart="68dp"
+                        android:background="@drawable/back_amjad"
+                        android:clipToOutline="true"
+                        android:rotation="-30"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="-18dp" />
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="55dp"
+                        android:layout_height="174dp"
+                        android:layout_marginStart="148dp"
+                        android:background="@drawable/back_amjad"
+                        android:clipToOutline="true"
+                        android:rotation="-30"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="-18dp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="أنا أمجاد، جرب تستشيرني"
+                        android:textAppearance="@style/semiBold"
+                        android:textColor="@color/yankee_blue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مستشارة مدعومة بالذكاء الاصطناعي"
+                        android:textAppearance="@style/Regular11"
+                        android:textColor="@color/yankee_blue"
+                        app:layout_constraintEnd_toEndOf="@+id/textView16"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        android:paddingVertical="2dp"
+                        app:layout_constraintEnd_toEndOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+
+                    <TextView
+                        android:paddingVertical="2dp"
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                        app:layout_constraintEnd_toStartOf="@+id/textView18"
+                        app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        app:layout_constraintEnd_toEndOf="@+id/textView18"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                        app:layout_constraintEnd_toEndOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                        app:layout_constraintEnd_toStartOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_back_ground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="استشارة أسرية"
+                        android:textAppearance="@style/Amjad_consultant_card_font"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="113dp"
+                android:layout_height="153dp"
+                android:layout_marginStart="10dp"
+                android:elevation="2dp"
+                android:src="@drawable/amjad"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+                app:layout_constraintStart_toStartOf="@+id/cardView3" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="106dp"
+                        android:layout_height="104dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/illu_discover_your_personality"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/alexandria_bold"
+                        android:text="اكتشف ذاتك الحقيقيه"
+                        android:textColor="#A70751"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="188dp"
+                        android:layout_height="50dp"
+
+                        android:text="اكتسب فهماً دقيقاً للغاية لذاتك الحقيقية واكتشف أسرار سلوكك في غضون دقائق معدودة"
+                        android:textAppearance="@style/Regular11"
+                        app:layout_constraintEnd_toEndOf="@+id/textView20"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/primary_button_big"
+                        android:text="اكتشف شخصيتك الآن"
+                        android:textAppearance="@style/Regular11"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_assessment"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="40dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_survey"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_assessment" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_survey" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="وين تحب توفر فلوسك؟"
+                android:textAppearance="@style/semiBold"
+                android:textColor="@color/yankee_blue"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_news"
+                app:srcCompat="@drawable/ic_trending" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_offers"
+                android:layout_width="match_parent"
+                android:layout_height="153dp"
+                android:layout_marginTop="18dp"
+                android:layoutDirection="rtl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="أكثر شي مطلوب الفترة هذي"
+                android:textAppearance="@style/semiBold"
+                android:textColor="@color/yankee_blue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_most_used_offer"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:layoutDirection="rtl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_offers"
+                app:srcCompat="@drawable/ic_trending" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="114dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#f1f2f3"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_most_used_offer">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="وظائف متاحة"
+                        android:textAppearance="@style/semiBold"
+                        android:textColor="@color/yankee_blue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="222dp"
+                        android:layout_height="29dp"
+
+                        android:layout_marginTop="12dp"
+                        android:text="استعرض الوظائف الشاغرة داخل الشركة وتقدّم لها مباشرة عبر التطبيق"
+                        android:textAppearance="@style/Regular11"
+                        app:layout_constraintEnd_toEndOf="@+id/textView25"
+                        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/jops_text_background"
+                        android:paddingHorizontal="6dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="2 جديد"
+                        android:textAppearance="@style/Regular"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView25"
+                        app:layout_constraintEnd_toStartOf="@+id/textView25"
+                        app:layout_constraintTop_toTopOf="@+id/textView25" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>

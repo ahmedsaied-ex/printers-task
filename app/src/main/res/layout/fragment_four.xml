@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/fr_fourth"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.FragmentFour"
+    tools:context=".ui.fragments.onBoarding.FragmentFour"
     android:fitsSystemWindows="true">
 
 

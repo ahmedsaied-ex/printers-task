@@ -5,8 +5,10 @@
             android:innerRadius="5dp"
             android:thickness="1dp"
             android:useLevel="false"
+
             >
             <solid android:color="@color/indicator_active"/>
+            <size android:height="8dp" android:width="8dp"/>
 
         </shape>
 
@@ -19,6 +21,7 @@
             android:useLevel="false"
             >
             <solid android:color="@color/indicator_active"/>
+            <size android:height="15dp" android:width="15dp"/>
         </shape>
     </item>
 </layer-list>

@@ -6,26 +6,26 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/amjad_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/amjad_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Printers">
         <activity
-            android:name=".ui.activities.RegesterActivity"
+            android:name=".ui.activities.amjad.RegesterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name=".ui.activities.amjad.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.Printers" />
         <activity
-            android:name=".ui.activities.HomeActivity"
+            android:name=".ui.activities.amjad.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.NewTask"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name=".ui.activities.amjad.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.GuideActivity"
+            android:name=".ui.activities.amjad.GuideActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.MainActivity"
