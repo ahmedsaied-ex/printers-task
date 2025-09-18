@@ -4,18 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.HomeActivity">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activities.amjad.HomeActivity">
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="128sp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_height="49dp"
+        app:itemIconTint="@drawable/nav_item_color"
+
+        app:itemBackground="@drawable/nav_item_background"
+        app:itemActiveIndicatorStyle="@style/NoIndicator"
+
+        app:menu="@menu/bottom_nav_menu"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_amjad" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--<androidx.fragment.app.FragmentContainerView-->
+<!--android:id="@+id/fragmentContainerView"-->
+<!--android:name="com.example.printers.ui.fragments.main.HomeFragment"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="0dp"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="parent" />-->

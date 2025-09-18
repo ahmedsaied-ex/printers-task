@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:fitsSystemWindows="true"
         android:background="#DAEEE1"
-        tools:context=".ui.activities.LoginActivity">
+        tools:context=".ui.activities.amjad.LoginActivity">
 
 
         <TextView
@@ -61,11 +61,11 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="88dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="88dp"
             android:text="حيَّاك الله,"
             android:textAppearance="@style/semiBold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
         <TextView
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="أسعدتني جيتك"
             android:textAppearance="@style/Regular"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
             app:layout_constraintTop_toTopOf="@+id/textView10" />
 
         <TextView
@@ -95,20 +95,18 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="16dp"
-            android:baselineAligned="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12">
 
             <com.hbb20.CountryCodePicker
-                android:id="@+id/countryCodePicker"
+                android:id="@+id/ccp_number"
                 android:layout_width="109dp"
-                android:layout_height="59dp"
+                android:layout_height="match_parent"
                 android:background="#D8E7DA"
                 android:gravity="center"
                 android:layoutDirection="ltr"
                 android:padding="0dp"
-                android:transitionName="false"
                 app:ccp_areaCodeDetectedCountry="false"
                 app:ccp_autoFormatNumber="false"
                 app:ccp_contentColor="#6B6D85"
@@ -120,28 +118,42 @@
                 app:ccp_textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <EditText
-                android:id="@+id/editTextPhone"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@color/background_light"
-
-                android:ems="10"
-                android:inputType="phone"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="20dp"
-                android:text="05"
-
-                android:textAppearance="@style/Regular"
-                android:textColor="@color/main_back_ground_Color"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/countryCodePicker"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_phone"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cursorErrorColor="#CA4B4B"
+                app:errorEnabled="true"
+                app:errorTextColor="#CA4B4B"
+                app:helperTextEnabled="true"
+                app:helperText="Helper text here"
+                app:helperTextTextColor="#CA4B4B"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ccp_number"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:inputType="phone"
+                    android:text="05"
+                    android:textAppearance="@style/Regular"
+                    android:textColor="@color/main_back_ground_Color"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -151,6 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/background_light"
+            android:layoutDirection="rtl"
             android:hint="كلمة المرور"
             android:textAppearance="@style/Regular"
             app:boxBackgroundColor="@color/background_light"
@@ -160,6 +173,7 @@
             app:endIconMode="password_toggle"
             app:endIconTint="#999aab"
             android:textAlignment="viewStart"
+            android:textDirection="rtl"
             android:gravity="start"
             app:expandedHintEnabled="false"
             app:hintEnabled="false"
@@ -178,8 +192,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:inputType="textPassword"
 
+                android:inputType="textPassword"
+                android:textDirection="rtl"
+                android:layoutDirection="rtl"
                 android:textAppearance="@style/Regular"
                 android:textColor="@color/black" />
 
@@ -192,7 +208,7 @@
             android:layout_marginTop="16dp"
             android:text="نسيت كلمة مروري؟"
             android:textAppearance="@style/medium"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
         <androidx.appcompat.widget.AppCompatButton
