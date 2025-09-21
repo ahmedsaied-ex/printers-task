@@ -1,5 +1,6 @@
 package com.example.printers.ui.adapter.amjad
 
+import android.app.Notification
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +9,8 @@ import com.example.printers.databinding.MessageItemLayoutBinding
 import com.example.printers.ui.holders.amjad.MessageViewHolder
 
 class MessagesAdapter(
-    private val messages: List<MessageData>
+    private val messages: List<MessageData>,
+    private val onClick: (MessageData) -> Unit
 ) : RecyclerView.Adapter<MessageViewHolder>() {
 
 
@@ -27,6 +29,9 @@ class MessagesAdapter(
         holder.img.setImageResource(message.img)
         holder.messageContent.text = message.messageContent
         holder.tvDate.text = message.date
+        holder.itemView.setOnClickListener {
+            onClick(message)
+        }
     }
 
     override fun getItemCount(): Int = messages.size

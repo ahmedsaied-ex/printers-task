@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation("org.greenrobot:eventbus:3.3.1")
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)

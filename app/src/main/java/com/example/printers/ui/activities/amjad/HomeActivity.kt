@@ -6,21 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.printers.R
 import com.example.printers.databinding.ActivityHomeBinding
-import com.example.printers.ui.fragments.main.HomeFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         initView()
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.fragmentContainerView, HomeFragment())
-//            .commit()
-
+        setupBottomNavigation()
     }
 
     private fun initView() {
@@ -28,5 +27,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+    }
+
+    private fun setupBottomNavigation() {
+        // Find the NavController
+        val navController = findNavController(R.id.fragmentContainerView2)
+
+        // Connect BottomNavigationView with NavController
+        binding.bottomNavigationView.setupWithNavController(navController)
     }
 }

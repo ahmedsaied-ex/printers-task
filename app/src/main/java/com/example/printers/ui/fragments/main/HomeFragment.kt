@@ -1,7 +1,9 @@
 package com.example.printers.ui.fragments.main
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +37,10 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.jvm.java
 import androidx.navigation.findNavController
+import com.example.printers.ui.NotificationReadEvent
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class HomeFragment : Fragment() {
 
@@ -67,6 +73,18 @@ class HomeFragment : Fragment() {
         callBacks()
     }
 
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("HomeFragment", "onStart -> register event bus")
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
     private fun callBacks() {
         binding.btLogOut.setOnClickListener {
             val sharedPrefs = SharedPrefs.getInstance(binding.root.context)
@@ -77,7 +95,15 @@ class HomeFragment : Fragment() {
 
         binding.ivNotificationBill.setOnClickListener {
             binding.root.findNavController().navigate(R.id.action_homeFragment_to_notification)
+
         }
+
+
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onNotificationRead(event: NotificationReadEvent) {
+        Log.d("HomeFragment", "Sticky Event received -> hiding dot")
+        binding.ivNotificationDot.visibility = View.GONE
     }
 
     private fun initMostUsedOffersRecycler() {

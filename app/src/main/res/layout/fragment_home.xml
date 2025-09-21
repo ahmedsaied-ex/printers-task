@@ -65,6 +65,7 @@
                 </androidx.cardview.widget.CardView>
                 <!--notification dot-->
                 <View
+                    android:id="@+id/iv_notification_dot"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     android:background="@drawable/notification_dot"

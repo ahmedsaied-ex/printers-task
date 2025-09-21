@@ -1,6 +1,7 @@
 package com.example.printers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,9 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.printers.data.amjad.MessageData
 import com.example.printers.databinding.FragmentNotificationBinding
+import com.example.printers.ui.NotificationReadEvent
 import com.example.printers.ui.adapter.amjad.MessagesAdapter
+import org.greenrobot.eventbus.EventBus
 
 class Notification : Fragment() {
 
@@ -66,7 +69,11 @@ class Notification : Fragment() {
 
             )
 
-        adapter = MessagesAdapter(sampleMessages)
+        adapter = MessagesAdapter(sampleMessages,
+            { messageData ->
+                EventBus.getDefault().post(NotificationReadEvent())
+                Log.d("Notification_tag", "Notification clicked: $messageData")}
+            )
 
 
         binding.rvMessage.layoutManager = LinearLayoutManager(requireContext())
