@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home_outline"
+        android:icon="@drawable/ic_home_selector"
         android:title="home" />
 
     <item
-        android:icon="@drawable/ic_offers_outline"
         android:id="@+id/offersFragment2"
+        android:icon="@drawable/ic_offers_selector"
         android:title="offers" />
+
     <item
         android:id="@+id/vendorsFragment2"
-        android:title="Vendor"
-        android:icon="@drawable/ic_vendors_outline"
-        />
+        android:icon="@drawable/ic_vendors_selector"
+        android:title="Vendor" />
+
     <item
         android:id="@+id/newsFragment"
-        android:icon="@drawable/ic_news_outline"
+        android:icon="@drawable/ic_news_selector"
         android:title="news" />
+
     <item
-        android:icon="@drawable/ic_my_consultant_outline"
         android:id="@+id/consultantFragment"
+        android:icon="@drawable/ic_consultant_selector"
         android:title="consultant" />
 
 </menu>
