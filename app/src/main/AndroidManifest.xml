@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Printers">
         <activity
+            android:name=".ui.activities.amjad.NotificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Printers" />
+        <activity
             android:name=".ui.activities.amjad.RegesterActivity"
             android:exported="false" />
         <activity

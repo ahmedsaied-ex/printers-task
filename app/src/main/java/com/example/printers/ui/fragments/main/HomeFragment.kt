@@ -37,7 +37,9 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.jvm.java
 import androidx.navigation.findNavController
+import com.example.printers.Notification
 import com.example.printers.ui.NotificationReadEvent
+import com.example.printers.ui.activities.amjad.NotificationActivity
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -94,8 +96,8 @@ class HomeFragment : Fragment() {
         }
 
         binding.ivNotificationBill.setOnClickListener {
-            binding.root.findNavController().navigate(R.id.action_homeFragment_to_notification)
-
+            val intent = Intent(requireContext(), NotificationActivity::class.java)
+            startActivity(intent)
         }
 
 

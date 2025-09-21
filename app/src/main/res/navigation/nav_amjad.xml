@@ -8,20 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.printers.ui.fragments.main.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_notification"
-            app:destination="@id/notification" />
-    </fragment>
-    <fragment
-        android:id="@+id/notification"
-        android:name="com.example.printers.Notification"
-        android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" >
-        <action
-            android:id="@+id/action_notification_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:label="HomeFragment" />
     <fragment
         android:id="@+id/offersFragment2"
         android:name="com.example.printers.OffersFragment"

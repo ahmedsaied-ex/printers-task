@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         initView()
-        setupBottomNavigation()
+        //setupBottomNavigation()
     }
 
     private fun initView() {

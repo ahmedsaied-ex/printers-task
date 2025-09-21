@@ -1,5 +1,6 @@
 package com.example.printers
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.printers.data.amjad.MessageData
 import com.example.printers.databinding.FragmentNotificationBinding
 import com.example.printers.ui.NotificationReadEvent
+import com.example.printers.ui.activities.amjad.HomeActivity
 import com.example.printers.ui.adapter.amjad.MessagesAdapter
 import org.greenrobot.eventbus.EventBus
 
@@ -38,7 +40,8 @@ class Notification : Fragment() {
 
     private fun callBacks() {
         binding.ivBackArrow.setOnClickListener {
-            binding.root.findNavController().navigate(R.id.action_notification_to_homeFragment)
+            Intent(requireContext(), HomeActivity::class.java)
+            requireActivity().finish()
         }
     }
 
