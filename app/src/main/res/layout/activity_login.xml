@@ -137,6 +137,7 @@
                 app:helperTextTextColor="#CA4B4B"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toEndOf="@+id/ccp_number"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -145,6 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
+                    android:backgroundTint="@color/white"
                     android:gravity="center_vertical"
                     android:inputType="phone"
                     android:text="05"
