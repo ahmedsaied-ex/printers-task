@@ -11,22 +11,22 @@
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/offersFragment2"
-        android:name="com.example.printers.OffersFragment"
+        android:name="com.example.printers.ui.fragments.OffersFragment"
         android:label="fragment_offers"
         tools:layout="@layout/fragment_offers" />
     <fragment
         android:id="@+id/vendorsFragment2"
-        android:name="com.example.printers.VendorsFragment"
+        android:name="com.example.printers.ui.fragments.VendorsFragment"
         android:label="fragment_vendors2"
         tools:layout="@layout/fragment_vendors2" />
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.printers.NewsFragment"
+        android:name="com.example.printers.ui.fragments.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/consultantFragment"
-        android:name="com.example.printers.ConsultantFragment"
+        android:name="com.example.printers.ui.fragments.ConsultantFragment"
         android:label="fragment_consultant"
         tools:layout="@layout/fragment_consultant" />
 </navigation>

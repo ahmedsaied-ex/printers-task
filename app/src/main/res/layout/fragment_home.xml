@@ -256,6 +256,7 @@
 
 
                     <androidx.viewpager2.widget.ViewPager2
+                        android:layoutDirection="rtl"
                         android:id="@+id/vp_hr_request"
                         android:layout_width="match_parent"
                         android:layout_height="94dp"
@@ -266,6 +267,7 @@
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tl_hr_view_pager"
                         android:layout_width="wrap_content"
+                        android:layoutDirection="rtl"
 
                         android:layout_height="0dp"
                         android:backgroundTint="@color/white"
@@ -585,7 +587,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_offers"
                 android:layout_width="match_parent"
-                android:layout_height="153dp"
+                android:layout_height="125dp"
                 android:layout_marginTop="18dp"
                 android:layoutDirection="rtl"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -607,7 +609,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_most_used_offer"
                 android:layout_width="match_parent"
-                android:layout_height="212dp"
+                android:layout_height="220dp"
                 android:layoutDirection="rtl"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -617,7 +619,7 @@
                 android:id="@+id/imageView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rv_offers"
@@ -629,7 +631,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="80dp"
                 android:backgroundTint="#f1f2f3"
                 android:outlineSpotShadowColor="@android:color/transparent"
                 app:cardCornerRadius="16dp"

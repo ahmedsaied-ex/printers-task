@@ -1,31 +1,39 @@
-package com.example.printers.ui.activities.amjad
+package com.example.printers.ui.fragments
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.printers.R
 import com.example.printers.data.amjad.MessageData
-import com.example.printers.databinding.ActivityNotificationBinding
+import com.example.printers.databinding.FragmentNotificationBinding
+import com.example.printers.ui.NotificationReadEvent
+import com.example.printers.ui.activities.amjad.HomeActivity
 import com.example.printers.ui.adapter.amjad.MessagesAdapter
+import org.greenrobot.eventbus.EventBus
 
-class NotificationActivity : AppCompatActivity() {
+class Notification : Fragment() {
 
+    private var _binding: FragmentNotificationBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var binding: ActivityNotificationBinding
+    private lateinit var adapter: MessagesAdapter
 
-    private var isClicked = false
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentNotificationBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        binding = ActivityNotificationBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
         callBacks()
@@ -33,7 +41,8 @@ class NotificationActivity : AppCompatActivity() {
 
     private fun callBacks() {
         binding.ivBackArrow.setOnClickListener {
-            finish()
+            Intent(requireContext(), HomeActivity::class.java)
+            requireActivity().finish()
         }
     }
 
@@ -120,20 +129,24 @@ class NotificationActivity : AppCompatActivity() {
 
             )
 
-
-        val adapter = MessagesAdapter(
+        adapter = MessagesAdapter(
             sampleMessages,
             {
-                isClicked = true
-                setResult(RESULT_OK)
+//                setResult(RESULT_OK) // العلامة بس
+//                finish()
+
             }
         )
 
 
-        binding.rvMessage.layoutManager = LinearLayoutManager(this)
+        binding.rvMessage.layoutManager = LinearLayoutManager(requireContext())
 
 
         binding.rvMessage.adapter = adapter
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

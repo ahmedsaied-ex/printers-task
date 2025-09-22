@@ -1,5 +1,6 @@
 package com.example.printers.ui.fragments.main
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -37,7 +39,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.jvm.java
 import androidx.navigation.findNavController
-import com.example.printers.Notification
+import com.example.printers.ui.fragments.Notification
 import com.example.printers.ui.NotificationReadEvent
 import com.example.printers.ui.activities.amjad.NotificationActivity
 import org.greenrobot.eventbus.EventBus
@@ -49,6 +51,13 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private val launcher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+           binding.ivNotificationDot.visibility=View.GONE
+        }
+    }
 
 
     override fun onCreateView(
@@ -97,7 +106,7 @@ class HomeFragment : Fragment() {
 
         binding.ivNotificationBill.setOnClickListener {
             val intent = Intent(requireContext(), NotificationActivity::class.java)
-            startActivity(intent)
+            launcher.launch(intent)
         }
 
 
@@ -152,37 +161,37 @@ class HomeFragment : Fragment() {
         val list = listOf(
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "...كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
             NewsData(
                 img = R.drawable.banner1,
-                text = "...كيف استفيد من برنامج أمجاد",
+                text = "كيف استفيد من برنامج أمجاد...",
                 numberOfViews = "122"
             ),
 

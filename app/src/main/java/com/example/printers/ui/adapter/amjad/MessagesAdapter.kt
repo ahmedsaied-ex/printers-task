@@ -10,7 +10,7 @@ import com.example.printers.ui.holders.amjad.MessageViewHolder
 
 class MessagesAdapter(
     private val messages: List<MessageData>,
-    private val onClick: (MessageData) -> Unit
+    private val onClick: () -> Unit
 ) : RecyclerView.Adapter<MessageViewHolder>() {
 
 
@@ -30,7 +30,7 @@ class MessagesAdapter(
         holder.messageContent.text = message.messageContent
         holder.tvDate.text = message.date
         holder.itemView.setOnClickListener {
-            onClick(message)
+            onClick()
         }
     }
 

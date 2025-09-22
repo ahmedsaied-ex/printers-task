@@ -4,35 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.amjad.HomeActivity">
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layoutDirection="rtl"
-        app:labelVisibilityMode="unlabeled"
-        android:layout_height="49dp"
-        app:itemIconTint="@drawable/nav_item_color"
-
-        app:itemBackground="@drawable/nav_item_background"
-        app:itemActiveIndicatorStyle="@style/NoIndicator"
-
-        app:menu="@menu/bottom_nav_menu"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,15 +23,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_amjad" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        android:layoutDirection="rtl"
+        app:itemActiveIndicatorStyle="@style/NoIndicator"
+
+        app:itemBackground="@drawable/nav_item_background"
+        app:itemIconTint="@drawable/nav_item_color"
+
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_what_you_feel"
+        android:layout_width="260dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/what_you_feel_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_emoji"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/emoji" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textAppearance="@style/Regular"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="ما هو شعورك اليوم؟"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_emoji"
+            app:layout_constraintEnd_toStartOf="@+id/iv_emoji"
+            app:layout_constraintTop_toTopOf="@+id/iv_emoji" />
+
+        <ImageView
+            android:id="@+id/iv_what_you_feel_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-<!--<androidx.fragment.app.FragmentContainerView-->
-<!--android:id="@+id/fragmentContainerView"-->
-<!--android:name="com.example.printers.ui.fragments.main.HomeFragment"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="0dp"-->
-<!--app:layout_constraintEnd_toEndOf="parent"-->
-<!--app:layout_constraintStart_toStartOf="parent"-->
-<!--app:layout_constraintTop_toTopOf="parent" />-->
+    <!--<androidx.fragment.app.FragmentContainerView-->
+    <!--android:id="@+id/fragmentContainerView"-->
+    <!--android:name="com.example.printers.ui.fragments.main.HomeFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
